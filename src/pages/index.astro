@@ -3,4 +3,108 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="VIVA Soluções - Energia Solar Limpa e Renovável com Alta Qualidade e Segurança">
+  <nav class="bg-gray-800 text-white p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#orcamento" class="hover:underline">Orçamento</a>
+            <a href="#quem-somos" class="hover:underline">Quem Somos</a>
+            <a href="#projetos" class="hover:underline">Projetos</a>
+            <a href="#beneficios-energia-solar" class="hover:underline">Benefícios da Energia Solar</a>
+            <a href="#contato" class="hover:underline">Contato</a>
+        </div>
+    </nav>
+  <!-- Seção de Cadastro para Orçamento -->
+    <section class="bg-white p-8" id="orcamento">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-3xl font-bold mb-4">Receba seu Orçamento Personalizado de Energia Solar</h1>
+            <p class="mb-6">Interessado em reduzir sua conta de energia e contribuir para um futuro sustentável? Preencha o formulário abaixo e receba um orçamento personalizado. Nossa equipe especializada irá avaliar suas necessidades e oferecer a melhor solução em energia solar para você.</p>
+            <form class="grid grid-cols-1 gap-6">
+                <input type="text" name="nome" placeholder="Nome Completo" class="p-2 border border-gray-300 rounded" required>
+                <input type="email" name="email" placeholder="Endereço de E-mail" class="p-2 border border-gray-300 rounded" required>
+                <input type="tel" name="telefone" placeholder="Telefone" class="p-2 border border-gray-300 rounded" required>
+                <input type="text" name="endereco" placeholder="Endereço" class="p-2 border border-gray-300 rounded" required>
+                <input type="text" name="consumo" placeholder="Consumo Mensal de Energia" class="p-2 border border-gray-300 rounded" required>
+                <textarea name="mensagem" placeholder="Mensagem/Comentários" class="p-2 border border-gray-300 rounded" required></textarea>
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Receber Orçamento</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Seção "Quem Somos" -->
+    <section class="bg-gray-200 p-8" id="quem-somos">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Sobre a VIVA Soluções</h2>
+            <p class="mb-6">Somos uma empresa que atua no mercado energético oferecendo energia de qualidade, segurança, equipe qualificada e atendimento personalizado. Prezamos pelo bom relacionamento e transparência em nossos projetos, alcançando assim, a confiança e amizade dos nossos clientes e fornecedores.</p>
+            <div class="mb-4">
+                <h3 class="text-2xl font-semibold mb-2">Nossos Valores:</h3>
+                <ul class="list-disc list-inside">
+                    <li>Atendimento Personalizado</li>
+                    <li>Venda Consultiva</li>
+                    <li>Produtos de Última Geração</li>
+                    <li>Equipe Técnica Experiente</li>
+                    <li>Suporte Pós-Venda</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold mb-2">Nossa Missão:</h3>
+                <p>"Oferecer e comercializar energia limpa e renovável que atenda às demandas dos clientes de modo individualizado, permitindo-lhes conquistar uma vida mais confortável e econômica."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section class="bg-white p-8" id="projetos">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Nossos Projetos</h2>
+            <p class="mb-6">Conheça alguns dos nossos projetos de sucesso que ajudaram clientes a economizar e a produzir sua própria energia de forma sustentável.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-100 p-4 rounded">
+                    <h3 class="text-xl font-semibold mb-2">Projeto Residencial em São Paulo</h3>
+                    <p>Instalação de 20 painéis solares, reduzindo 70% da conta de energia.</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded">
+                    <h3 class="text-xl font-semibold mb-2">Projeto Comercial em Belo Horizonte</h3>
+                    <p>Sistema fotovoltaico com capacidade de 50kW, promovendo sustentabilidade e economia.</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded">
+                    <h3 class="text-xl font-semibold mb-2">Projeto Industrial no Rio de Janeiro</h3>
+                    <p>Implementação de usina solar para atender alta demanda energética com baixo custo de manutenção.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção sobre Energia Solar e Benefícios -->
+    <section class="bg-gray-200 p-8" id="beneficios-energia-solar">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Por que Escolher Energia Solar?</h2>
+            <p class="mb-6">A energia solar é uma fonte de energia renovável, limpa e abundante. Ao optar por um sistema fotovoltaico, você garante:</p>
+            <ul class="list-disc list-inside mb-6">
+                <li>Redução significativa da conta de energia elétrica</li>
+                <li>Vida útil dos sistemas acima de 25 anos</li>
+                <li>Baixo custo de manutenção</li>
+                <li>Imunidade às altas tarifas de energia</li>
+                <li>Mais conforto e economia</li>
+                <li>Valorização do imóvel</li>
+                <li>Investimento com alto retorno</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mb-2">Como Funciona?</h3>
+            <p class="mb-6">O sistema On-Grid conecta seu sistema fotovoltaico à rede elétrica, permitindo a troca de energia entre sua residência e a concessionária de energia. Assim, você pode consumir energia limpa e ainda vender o excedente produzido.</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white p-8" id="contato">
+        <div class="max-w-7xl mx-auto">
+            <p class="mb-4">Fique conectado com a VIVA Soluções. Siga-nos nas redes sociais e acompanhe as novidades e promoções.</p>
+            <div class="flex space-x-4 mb-4">
+                <a href="https://www.facebook.com/solarsolucoes" class="hover:underline">Facebook: @solarsolucoes</a>
+                <a href="https://www.instagram.com/solarsolucoes" class="hover:underline">Instagram: @solarsolucoes</a>
+                <a href="https://www.linkedin.com/company/viva-solucoes" class="hover:underline">LinkedIn: VIVA Soluções</a>
+            </div>
+            <div>
+                <p>E-mail: <a href="mailto:viva.solarsolucoes@gmail.com" class="hover:underline">viva.solarsolucoes@gmail.com</a></p>
+                <p>Telefone: (xx) xxxx-xxxx</p>
+            </div>
+        </div>
+    </footer>
 </Layout>
