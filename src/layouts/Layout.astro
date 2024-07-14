@@ -29,6 +29,26 @@ const { title } = Astro.props;
     <meta name="twitter:image:height" content="600">
     <meta name="twitter:image" content="URL_da_Imagem_Representativa">
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "VIVA Soluções",
+        "url": "https://www.vivasolucoes.com.br",
+        "logo": "https://www.vivasolucoes.com.br/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/solarsolucoes",
+            "https://www.instagram.com/solarsolucoes",
+            "https://www.linkedin.com/company/viva-solucoes"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-xx-xxxx-xxxx",
+            "contactType": "Customer Service"
+        }
+    }
+    </script>
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
