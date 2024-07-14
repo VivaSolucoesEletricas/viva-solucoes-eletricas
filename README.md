@@ -1,40 +1,43 @@
-# Astro Starter Kit: Basics
+# VIVA Soluções - Landing Page
 
-```sh
-npm create astro@latest -- --template basics
-```
+Esta é a landing page da VIVA Soluções, uma empresa especializada em energia solar. Este projeto foi desenvolvido utilizando o framework [Astro.build](https://astro.build/).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Índice
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Sobre](#sobre)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Instalação](#instalação)
+- [Como Usar](#como-usar)
+- [Contribuindo](#contribuindo)
+- [Licença](#licença)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Sobre
 
-## 🚀 Project Structure
+A VIVA Soluções atua no mercado energético oferecendo energia de qualidade, segurança, equipe qualificada e atendimento personalizado. Esta landing page foi criada para apresentar a empresa, mostrar seus projetos, explicar os benefícios da energia solar e fornecer um meio para os clientes solicitarem orçamentos personalizados.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Tecnologias Utilizadas
 
-```text
+- [Astro](https://astro.build/) - Framework para construção de sites rápidos
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitário
+- HTML5
+- JSON-LD para dados estruturados
+
+## Estrutura do Projeto
+
+```plaintext
 /
-├── public/
-│   └── favicon.svg
+├── public/             # Arquivos estáticos
+│   ├── favicon.ico
+│   └── logo.png
 ├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+│   ├── components/     # Componentes Astro
+│   ├── layouts/        # Layouts Astro
+│   └── pages/          # Páginas Astro
+│       └── index.astro # Página inicial
+├── astro.config.mjs    # Configuração do Astro
+├── package.json        # Dependências do projeto
+└── tailwind.config.js  # Configuração do Tailwind CSS
 
 ## 🧞 Commands
 
@@ -52,3 +55,5 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```
+
