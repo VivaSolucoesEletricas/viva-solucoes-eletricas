@@ -1,41 +1,85 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { ContactForm } from "../components/contact-form";
+import ContactForm from "../components/contact-form.astro";
+import ProjectCard from "../components/project-card.astro";
+import CustomerTestimonialCard from "../components/customer-testimonial-card.astro";
+import { Image } from "astro:assets";
+import homeImage from "../assets/home.jpg";
 ---
 
 <Layout
   title="VIVA Soluções - Energia Solar Limpa e Renovável com Alta Qualidade e Segurança"
 >
   <!-- Seção de Cadastro para Orçamento -->
-  <section class="bg-white p-8" id="orcamento">
-    <nav class="bg-gray-800 text-white p-4">
+  <section class="relative" id="orcamento">
+    <Image
+      src={homeImage}
+      alt="Imagem de fundo"
+      class="absolute -z-10 inset-0 w-full h-full object-cover"
+    />
+    <nav class="text-white p-4 fixed w-full">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#orcamento" class="hover:underline">Orçamento</a>
-        <a href="#quem-somos" class="hover:underline">Quem Somos</a>
-        <a href="#projetos" class="hover:underline">Projetos</a>
-        <a href="#beneficios-energia-solar" class="hover:underline">
-          Benefícios da Energia Solar
-        </a>
-        <a href="#contato" class="hover:underline">Contato</a>
+        <a href="#quem-somos" class="hover:underline hidden md:block"
+          >Quem Somos</a
+        >
+        <a href="#projetos" class="hover:underline hidden md:block">Projetos</a>
+        <a
+          href="#beneficios-energia-solar"
+          class="hover:underline hidden md:block">Benefícios da Energia Solar</a
+        >
+        <a href="#contato" class="hover:underline hidden md:block">Contato</a>
+
+        <!-- Botão de menu sanduíche no mobile -->
+        <button id="menu-btn" class="md:hidden flex items-center ml-auto">
+          <svg
+            width="39"
+            height="25"
+            viewBox="0 0 39 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="39" height="5" fill="#2C72B3"></rect>
+            <rect y="10" width="39" height="5" fill="#2C72B3"></rect>
+            <rect x="13" y="20" width="26" height="5" fill="#2C72B3"></rect>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu sanduíche que aparece no mobile -->
+      <div id="mobile-menu" class="mobile-menu hidden h-screen">
+        <a href="#quem-somos" class="block py-2 px-4 hover:bg-gray-700"
+          >Quem Somos</a
+        >
+        <a href="#projetos" class="block py-2 px-4 hover:bg-gray-700"
+          >Projetos</a
+        >
+        <a
+          href="#beneficios-energia-solar"
+          class="block py-2 px-4 hover:bg-gray-700"
+          >Benefícios da Energia Solar</a
+        >
+        <a href="#contato" class="block py-2 px-4 hover:bg-gray-700">Contato</a>
       </div>
     </nav>
-    <div class="max-w-7xl mx-auto">
-      <h1 class="text-3xl font-bold mb-4">
-        Receba seu Orçamento Personalizado de Energia Solar
-      </h1>
-      <p class="mb-6">
-        Interessado em reduzir sua conta de energia e contribuir para um futuro
-        sustentável? Preencha o formulário abaixo e receba um orçamento
-        personalizado. Nossa equipe especializada irá avaliar suas necessidades
-        e oferecer a melhor solução em energia solar para você.
-      </p>
-      <ContactForm client:idle />
+    <div class="max-w-7xl flex flex-col p-4 mx-auto pt-16">
+      <div>
+        <h1 class="text-3xl font-bold mb-4">
+          Transforme a Energia da sua Vida com a VIVA Soluções
+        </h1>
+        <p class="mb-6">
+          Interessado em reduzir sua conta de energia e contribuir para um
+          futuro sustentável? Preencha o formulário abaixo e receba um orçamento
+          personalizado. Nossa equipe especializada irá avaliar suas
+          necessidades e oferecer a melhor solução em energia solar para você.
+        </p>
+      </div>
+      <ContactForm />
     </div>
 
     <!-- Seção "Quem Somos" -->
     <section class="bg-gray-200 p-8" id="quem-somos">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold mb-4">Sobre a VIVA Soluções</h2>
+        <h2 class="text-3xl font-bold mb-4">Sobre nós</h2>
         <p class="mb-6">
           Somos uma empresa que atua no mercado energético oferecendo energia de
           qualidade, segurança, equipe qualificada e atendimento personalizado.
@@ -43,64 +87,108 @@ import { ContactForm } from "../components/contact-form";
           alcançando assim, a confiança e amizade dos nossos clientes e
           fornecedores.
         </p>
-        <div class="mb-4">
-          <h3 class="text-2xl font-semibold mb-2">Nossos Valores:</h3>
-          <ul class="list-disc list-inside">
-            <li>Atendimento Personalizado</li>
-            <li>Venda Consultiva</li>
-            <li>Produtos de Última Geração</li>
-            <li>Equipe Técnica Experiente</li>
-            <li>Suporte Pós-Venda</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold mb-2">Nossa Missão:</h3>
-          <p>
-            "Oferecer e comercializar energia limpa e renovável que atenda às
-            demandas dos clientes de modo individualizado, permitindo-lhes
-            conquistar uma vida mais confortável e econômica."
-          </p>
+        <div class="mt-8 space-y-4">
+          <div class="flex items-center space-x-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6 text-blue-600"
+            >
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+            <span>Atendimento Personalizado</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6 text-blue-600"
+            >
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+            <span>Venda Consultiva</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6 text-blue-600"
+            >
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+            <span>Produtos de última geração</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6 text-blue-600"
+            >
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+            <span>Equipe técnica experiente</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6 text-blue-600"
+            >
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+            <span>Suporte Pós-Venda</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Seção de Projetos -->
-    <section class="bg-white p-8" id="projetos">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold mb-4">Nossos Projetos</h2>
-        <p class="mb-6">
-          Conheça alguns dos nossos projetos de sucesso que ajudaram clientes a
-          economizar e a produzir sua própria energia de forma sustentável.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-gray-100 p-4 rounded">
-            <h3 class="text-xl font-semibold mb-2">
-              Projeto Residencial em São Paulo
-            </h3>
-            <p>
-              Instalação de 20 painéis solares, reduzindo 70% da conta de
-              energia.
-            </p>
-          </div>
-          <div class="bg-gray-100 p-4 rounded">
-            <h3 class="text-xl font-semibold mb-2">
-              Projeto Comercial em Belo Horizonte
-            </h3>
-            <p>
-              Sistema fotovoltaico com capacidade de 50kW, promovendo
-              sustentabilidade e economia.
-            </p>
-          </div>
-          <div class="bg-gray-100 p-4 rounded">
-            <h3 class="text-xl font-semibold mb-2">
-              Projeto Industrial no Rio de Janeiro
-            </h3>
-            <p>
-              Implementação de usina solar para atender alta demanda energética
-              com baixo custo de manutenção.
-            </p>
-          </div>
-        </div>
+    <section id="projetos" class="p-8 bg-gray-100">
+      <h2 class="text-3xl font-bold text-center">Projetos</h2>
+      <div class="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          Array.from({ length: 6 }).map((_, index) => (
+            <ProjectCard
+              name={`Projeto ${index + 1}`}
+              imageUrl="https://github.com/jeffsilva01.png"
+            />
+          ))
+        }
       </div>
     </section>
 
@@ -128,6 +216,19 @@ import { ContactForm } from "../components/contact-form";
           de energia. Assim, você pode consumir energia limpa e ainda vender o
           excedente produzido.
         </p>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="p-8 bg-gray-100">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center">Depoimentos de Clientes</h2>
+        <div class="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3">
+          <CustomerTestimonialCard
+            testimonila="Otimo atendimento"
+            clientName="Jefferson"
+            imageUrl="https://github.com/jeffsilva01.png"
+          />
+        </div>
       </div>
     </section>
 
@@ -165,3 +266,37 @@ import { ContactForm } from "../components/contact-form";
     </footer>
   </section>
 </Layout>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuLinks = mobileMenu?.querySelectorAll("a");
+  const body = document.body;
+
+  // Função para fechar o menu
+  function closeMenu() {
+    mobileMenu?.classList.add("hidden");
+    body.classList.remove("overflow-hidden");
+  }
+
+  // Abre ou fecha o menu quando o botão é clicado
+  menuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+
+    // Verifica se o menu está aberto ou fechado
+    if (!mobileMenu?.classList.contains("hidden")) {
+      // Se o menu estiver aberto, desabilita o scroll
+      body.classList.add("overflow-hidden");
+    } else {
+      // Se o menu estiver fechado, habilita o scroll novamente
+      body.classList.remove("overflow-hidden");
+    }
+  });
+
+  // Adiciona um evento de clique a cada link
+  menuLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+</script>

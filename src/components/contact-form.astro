@@ -1,0 +1,58 @@
+<form class="grid grid-cols-1 gap-6">
+  <input
+    type="text"
+    name="name"
+    placeholder="Nome Completo"
+    class="p-2 border border-gray-300 rounded"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Endereço de E-mail"
+    class="p-2 border border-gray-300 rounded"
+    required
+  />
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Telefone"
+    class="p-2 border border-gray-300 rounded"
+    required
+  />
+  <input
+    type="text"
+    name="address"
+    placeholder="Endereço"
+    class="p-2 border border-gray-300 rounded"
+    required
+  />
+  <input
+    type="text"
+    name="energyConsumption"
+    placeholder="Consumo Mensal de Energia"
+    class="p-2 border border-gray-300 rounded"
+    required
+  />
+  <textarea
+    name="message"
+    placeholder="Mensagem/Comentários"
+    class="p-2 border border-gray-300 rounded"></textarea>
+  <button
+    type="submit"
+    class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+  >
+    Receber Orçamento
+  </button>
+</form>
+
+<script>
+  import { actions } from "astro:actions";
+  const form = document.querySelector("form");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const { error, data } = await actions.sendEmail(formData);
+  });
+</script>
