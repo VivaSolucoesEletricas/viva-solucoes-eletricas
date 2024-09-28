@@ -53,6 +53,7 @@
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    const { error, data } = await actions.sendEmail(formData);
+    await actions.sendEmail(formData);
+    await actions.saveToSheets(formData);
   });
 </script>
