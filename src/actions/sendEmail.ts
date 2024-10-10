@@ -7,14 +7,12 @@ const { EMAIL_FROM, RESEND_API_KEY } = import.meta.env;
 const resend = new Resend(RESEND_API_KEY);
 
 export async function sendEmailHandler({ name, email }: Input) {
-  const result = await resend.emails.send({
+  await resend.emails.send({
     from: EMAIL_FROM,
     to: email,
     subject: "Novo contato da Landing Page",
     html: render(Email({ name }), { pretty: true }),
   });
-
-  console.log(result);
 
   return "success";
 }
