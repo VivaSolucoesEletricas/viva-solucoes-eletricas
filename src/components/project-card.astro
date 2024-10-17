@@ -1,15 +1,49 @@
 ---
-const { name, imageUrl } = Astro.props;
+import { Image } from "astro:assets";
+
+import whoWeAre01 from "../assets/who-we-are-01.jpg";
+import whoWeAre02 from "../assets/who-we-are-02.jpg";
+import whoWeAre03 from "../assets/who-we-are-03.jpg";
 ---
 
-<div class="p-4 bg-white rounded-md shadow-md">
-  <img
-    src={imageUrl}
-    alt="Projeto 1"
-    class="w-full h-48 mb-4 rounded-md"
-    width="300"
-    height="200"
-    style="aspect-ratio: 300 / 200; object-fit: cover;"
-  />
-  <p class="text-center">{name}</p>
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="shadow-md overflow-hidden rounded-lg border border-zinc-200">
+      <Image class="w-full" src={whoWeAre01} alt="Imagem de energia" />
+      <div class="text-center p-4">
+        <span class="text-viva-blue font-bold">Residencial Belo Horionte</span>
+        <p class="text-sm">Potência: 7,08 Kw | Geração Média: 936 kWh/mês</p>
+        <p class="text-sm">Economia Anual: + de R$ 9.000,00</p>
+      </div>
+    </div>
+
+    <div class="shadow-md overflow-hidden rounded-lg border border-zinc-200">
+      <Image class="w-full" src={whoWeAre02} alt="Imagem de energia" />
+      <div class="text-center p-4">
+        <span class="text-viva-blue font-bold">Residencial Belo Horionte</span>
+        <p class="text-sm">Potência: 7,08 Kw | Geração Média: 936 kWh/mês</p>
+        <p class="text-sm">Economia Anual: + de R$ 9.000,00</p>
+      </div>
+    </div>
+
+    <div class="shadow-md overflow-hidden rounded-lg border border-zinc-200">
+      <Image class="w-full" src={whoWeAre03} alt="Imagem de energia" />
+      <div class="text-center p-4">
+        <span class="text-viva-blue font-bold">Residencial Belo Horionte</span>
+        <p class="text-sm">Potência: 7,08 Kw | Geração Média: 936 kWh/mês</p>
+        <p class="text-sm">Economia Anual: + de R$ 9.000,00</p>
+      </div>
+    </div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
 </div>
