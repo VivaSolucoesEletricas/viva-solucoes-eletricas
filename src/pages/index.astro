@@ -18,6 +18,8 @@ import sectionContact from "../assets/section-contatos.webp";
 import instagramLogo from "../assets/instagram-logo.svg";
 import logoVivaEnergiaSolar from "../assets/logo-viva-energia-solar.svg";
 import { Image } from "astro:assets";
+import Projects from "../components/project.tsx";
+import QuemSomosSlider from "../components/quem-somos-slider.tsx";
 ---
 
 <Layout
@@ -45,9 +47,11 @@ import { Image } from "astro:assets";
     </div>
   </section>
   <section>
-    <div class="container p-6 flex flex-col items-center m-auto">
-      <h3 class="text-5xl font-bold text-viva-orange">Quem somos?</h3>
-      <span class="text-sm text-viva-blue"
+    <div class="container p-6 m-auto">
+      <h3 class="text-5xl text-center font-bold text-viva-orange">
+        Quem somos?
+      </h3>
+      <span class="text-sm m-auto block text-center w-fit text-viva-blue"
         >Time de especialistas em energia alternativa</span
       >
       <div class="w-full border border-b-gray-100 my-9 bg-viva-blue"></div>
@@ -59,11 +63,7 @@ import { Image } from "astro:assets";
         fornecedores.
       </p>
     </div>
-    <div>
-      <!-- <Image src={whoWeAre01} alt="Imagem de energia" /> -->
-      <Image src={whoWeAre02} alt="Imagem de energia" />
-      <!-- <Image src={whoWeAre03} alt="Imagem de energia" /> -->
-    </div>
+    <QuemSomosSlider client:load />
   </section>
   <section>
     <div class="container flex flex-col items-center p-6 m-auto">
@@ -227,27 +227,11 @@ import { Image } from "astro:assets";
     </div>
   </section>
   <section>
-    <div class="container p-6 grid gap-8">
-      <h3 class="text-5xl text-center font-bold text-viva-orange">
+    <div class="container m-auto p-6">
+      <h3 class="text-5xl mb-6 text-center font-bold text-viva-orange">
         Conheça alguns projetos
       </h3>
-
-      <div>
-        <div
-          class="shadow-md w-fit overflow-hidden rounded-lg border border-zinc-200"
-        >
-          <Image src={whoWeAre01} alt="Imagem de energia" />
-          <div class="text-center p-4">
-            <span class="text-viva-blue font-bold"
-              >Residencial Belo Horionte</span
-            >
-            <p class="text-sm">
-              Potência: 7,08 Kw | Geração Média: 936 kWh/mês
-            </p>
-            <p class="text-sm">Economia Anual: + de R$ 9.000,00</p>
-          </div>
-        </div>
-      </div>
+      <Projects client:load />
     </div>
   </section>
   <section class="relative">
