@@ -1,0 +1,259 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WhatsappIcon from "../components/whatsapp-icon.astro";
+import ContactForm from "../components/contact-form.astro";
+import homeImage from "../assets/home.webp";
+import atendimentoPersonalizadoIcon from "../assets/atendimento-personalizado-icon.svg";
+import vendaConsultivaIcon from "../assets/venda-consultiva-icon.svg";
+import tecnologiaDeUltimaGeracaoIcon from "../assets/tecnologia-de-ultima-geracao-icon.svg";
+import suportePosVenda from "../assets/suporte-pos-venda-icon.svg";
+import corpoTecnicoEspecializado from "../assets/corpo-tecnico-especializado-icon.svg";
+import porqueEscolherAVivaLogo from "../assets/porque-escolher-a-viva-logo.svg";
+import porqueViva from "../assets/section-porque-viva.webp";
+import houseWithSolarPanel from "../assets/house-with-solar-panel-green-plug.png";
+import sectionContact from "../assets/section-contatos.webp";
+import instagramLogo from "../assets/instagram-logo.svg";
+import logoVivaEnergiaSolar from "../assets/logo-viva-energia-solar.svg";
+import { Image } from "astro:assets";
+import Projects from "../components/project.tsx";
+import QuemSomosSlider from "../components/quem-somos-slider.tsx";
+---
+
+<Layout
+  title="VIVA Soluções - Energia Solar Limpa e Renovável com Alta Qualidade e Segurança"
+>
+  <section class="relative">
+    <Image
+      src={homeImage}
+      alt="Imagem de fundo"
+      class="absolute -z-10 inset-0 w-full h-full object-cover"
+    />
+    <div
+      class="container p-6 m-auto flex gap-9 items-center md:justify-around md:flex-row flex-col"
+    >
+      <div class="text-center flex flex-col text-white">
+        <span class="font-bold text-6xl md:text-7xl">Sonhe</span>
+        <span class="w-full text-6xl md:text-7xl">Pegue</span>
+        <span
+          class="font-extrabold text-7xl md:text-8xl bg-viva-orange bg-clip-text text-transparent"
+          >VIVA</span
+        >
+        <span class="md:text-xl">ENERGIA SOLAR</span>
+      </div>
+      <ContactForm />
+    </div>
+  </section>
+  <section>
+    <div class="container p-6 m-auto">
+      <h3 class="text-5xl text-center font-bold text-viva-orange">
+        Quem somos?
+      </h3>
+      <span class="text-sm m-auto block text-center w-fit text-viva-blue"
+        >Time de especialistas em energia alternativa</span
+      >
+      <div class="w-full border border-b-gray-100 my-9 bg-viva-blue"></div>
+      <p class="text-justify">
+        Somos uma empresa que atua no mercado energético oferecendo energia de
+        qualidade, segurança, equipe qualificada e atendimento personalizado.
+        Prezamos pelo bom relacionamento e transparência em nossos projetos,
+        alcançando assim, a conbrança e amizade dos nossos clientes e
+        fornecedores.
+      </p>
+    </div>
+    <QuemSomosSlider client:load />
+  </section>
+  <section>
+    <div class="container flex flex-col items-center p-6 m-auto">
+      <h3 class="text-5xl font-bold text-viva-orange">Diferenciais</h3>
+      <div
+        class="flex items-center w-full flex-col md:flex-row md:justify-around"
+      >
+        <div class="grid gap-9 my-9">
+          <div class="flex items-center gap-4">
+            <Image src={atendimentoPersonalizadoIcon} alt="Imagem de energia" />
+            <div>
+              <span class="text-viva-orange">Atendimento Personalizado</span>
+              <p class="text-sm">
+                Atendimento ao cliente é personalizado, focado em suas
+                necessidades e preferências.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <Image src={vendaConsultivaIcon} alt="Imagem de energia" />
+            <div>
+              <span class="text-viva-orange">Venda Consultiva</span>
+              <p class="text-sm">
+                A venda consultiva é diferencial por oferecer soluções sob
+                medida e valor real.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <Image
+              src={tecnologiaDeUltimaGeracaoIcon}
+              alt="Imagem de energia"
+            />
+            <div>
+              <span class="text-viva-orange">Tecnologia de última geração</span>
+              <p class="text-sm">
+                Buscamos sempre as tecnologias mais avançadas para oferecer
+                inovação e qualidade.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <Image src={suportePosVenda} alt="Imagem de energia" />
+            <div>
+              <span class="text-viva-orange">Suporte pós-venda</span>
+              <p class="text-sm">
+                Nosso pós-venda é focado em manter a satisfação do cliente em
+                cada etapa.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <Image src={corpoTecnicoEspecializado} alt="Imagem de energia" />
+            <div>
+              <span class="text-viva-orange">Corpo técnico especializado</span>
+              <p class="text-sm">
+                Nosso corpo técnico é altamente capacitado e sempre atualizado
+                com as novidades.
+              </p>
+            </div>
+          </div>
+        </div>
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+  <section class="relative">
+    <Image
+      src={porqueViva}
+      alt="Imagem de fundo"
+      class="absolute -z-10 inset-0 w-full h-full object-cover"
+    />
+    <div class="container m-auto grid gap-8 items-center p-6">
+      <h3 class="text-5xl font-bold text-viva-orange text-center">
+        Porque <br />escolher a
+      </h3>
+      <Image
+        src={porqueEscolherAVivaLogo}
+        alt="Logo Porque escolher a VIVA"
+        class="mx-auto"
+      />
+      <p class="text-center text-white">
+        Na VIVA Soluções, oferecemos muito mais do que energia solar. Garantimos
+        segurança, com instalações certificadas e equipe experiente. Prezamos
+        pela transparência em todas as etapas, com acompanhamento constante para
+        que você tenha tranquilidade. Nossa prioridade é entregar economia real
+        na sua conta de luz, com qualidade e preço justo. Escolha a VIVA
+        Soluções e transforme seu consumo de energia em um investimento seguro e
+        sustentável.
+      </p>
+    </div>
+  </section>
+  <section class="bg-viva-blue">
+    <div class="container grid gap-6 m-auto p-6">
+      <h3 class="text-5xl font-bold text-center text-white">
+        Quais são os benefícios ?
+      </h3>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div>
+          <h4 class="text-white font-bold p-0.5 px-3 bg-[#0C4D71] w-fit">
+            Redução da conta de Energia Elétrica
+          </h4>
+          <p class="text-white">
+            Energia solar reduz a conta ao gerar eletricidade própria.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold p-0.5 px-3 bg-[#0C4D71] w-fit">
+            Baixo custo de manutenção
+          </h4>
+          <p class="text-white">
+            A energia solar tem poucas peças móveis, o que minimiza falhas.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold p-0.5 px-3 bg-[#0C4D71] w-fit">
+            Valorização do imóvel
+          </h4>
+          <p class="text-white">
+            Sim, a energia solar aumenta o valor do imóvel pela economia futura.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold p-0.5 px-3 bg-[#0C4D71] w-fit">
+            Durabilidade superior a 25 anos
+          </h4>
+          <p class="text-white">
+            Painéis solares são de materiais resistentes e duráveis.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold p-0.5 px-3 bg-[#0C4D71] w-fit">
+            Energia solar reduz a conta ao gerar eletricidade própria.
+          </h4>
+          <p class="text-white">
+            A energia solar reduz a dependência das distribuidoras e reajustes.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold p-0.5 px-3 bg-[#0C4D71] w-fit">
+            Mais conforto
+          </h4>
+          <p class="text-white">
+            A energia solar garante eletricidade estável e sem interrupções.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold p-0.5 px-3 bg-[#0C4D71] w-fit">
+            Você ajudando o meio ambiente
+          </h4>
+          <p class="text-white">
+            A energia solar é limpa, reduzindo emissões de CO₂ e poluição.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container m-auto p-6">
+      <h3 class="text-5xl mb-6 text-center font-bold text-viva-orange">
+        Conheça alguns projetos
+      </h3>
+      <Projects client:load />
+    </div>
+  </section>
+  <section class="relative">
+    <Image
+      src={sectionContact}
+      alt="Imagem de fundo"
+      class="absolute -z-10 inset-0 w-full h-full object-cover"
+    />
+    <div class="container m-auto flex flex-col items-center p-6 gap-8">
+      <h3 class="text-5xl text-center font-bold text-white">
+        Vamos conversar e garantir o melhor projeto para você.
+      </h3>
+      <ContactForm />
+    </div>
+  </section>
+  <section class="bg-viva-blue">
+    <div
+      class="container m-auto flex flex-col md:flex-row md:justify-around items-center gap-6 p-6 text-white"
+    >
+      <Image src={logoVivaEnergiaSolar} alt="Logo da VIVA Energia Solar" />
+      <span>© 2024 Todos os Direitos Reservados.</span>
+      <span>Desenvolvido e mantido por Jefferson Silva</span>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.instagram.com/viva.solarsolucoes/"
+      >
+        <Image src={instagramLogo} alt="Logo do Instagram" />
+      </a>
+    </div>
+  </section>
+  <WhatsappIcon />
+</Layout>
