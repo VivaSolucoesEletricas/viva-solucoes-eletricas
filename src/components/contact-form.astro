@@ -36,13 +36,14 @@
 </form>
 
 <script>
-  import { actions } from "astro:actions";
+  // import { actions } from "astro:actions";
   const form = document.querySelector("form");
 
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    await actions.sendEmail(formData);
-    await actions.saveToSheets(formData);
+    console.log(Object.fromEntries(formData));
+    // await actions.sendEmail(formData);
+    // await actions.saveToSheets(formData);
   });
 </script>
