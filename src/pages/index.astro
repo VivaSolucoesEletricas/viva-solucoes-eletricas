@@ -65,7 +65,7 @@ import QuemSomosSlider from "../components/quem-somos-slider.tsx";
     <div class="container flex flex-col items-center p-6 m-auto">
       <h3 class="text-5xl font-bold text-viva-orange">Diferenciais</h3>
       <div
-        class="flex items-center w-full flex-col md:flex-row md:justify-around"
+        class="flex items-start w-full flex-col md:flex-row md:justify-around"
       >
         <div class="grid gap-9 my-9">
           <div class="flex items-center gap-4">
@@ -132,7 +132,9 @@ import QuemSomosSlider from "../components/quem-somos-slider.tsx";
             </div>
           </div>
         </div>
-        <ContactForm />
+        <div class="border border-viva-orange rounded">
+          <ContactForm />
+        </div>
       </div>
     </div>
   </section>
