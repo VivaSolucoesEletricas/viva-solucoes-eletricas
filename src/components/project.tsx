@@ -1,6 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 import projeto1 from "../assets/projeto1.jpeg";
 import projeto2 from "../assets/projeto2.jpeg";
@@ -14,23 +17,26 @@ import projeto9 from "../assets/projeto9.jpeg";
 
 export default function Projects() {
   return (
-    <>
+    <div className="relative">
       <Swiper
         spaceBetween={25}
         slidesPerView={1}
+        modules={[Navigation]}
         autoplay={true}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
         breakpoints={{
           576: {
-            // width: 576,
             slidesPerView: 3,
           },
           768: {
-            // width: 768,
             slidesPerView: 3,
           },
         }}
       >
-        <SwiperSlide>
+        <SwiperSlide className="relative">
           <div className="shadow-md w-full overflow-hidden rounded-lg border border-zinc-200">
             <div className="relative w-full h-48">
               <img
@@ -183,7 +189,9 @@ export default function Projects() {
             </div>
           </div>
         </SwiperSlide>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
       </Swiper>
-    </>
+    </div>
   );
 }
