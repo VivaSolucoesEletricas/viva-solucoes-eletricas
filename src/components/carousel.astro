@@ -1,0 +1,85 @@
+<carousel-component>
+  <div class="relative overflow-hidden mx-auto">
+    <div
+      class="carousel-container flex transition-transform duration-500 ease-in-out"
+    >
+      <slot />
+    </div>
+    <button
+      class="carousel-prev absolute top-1/2 -translate-y-1/2 left-4 bg-black/50 text-white p-3 opacity-50 hover:opacity-100 transition duration-200 rounded-full z-10"
+    >
+      ❮
+    </button>
+    <button
+      class="carousel-next absolute top-1/2 -translate-y-1/2 right-4 bg-black/50 opacity-50 hover:opacity-100 transition duration-200 text-white p-3 rounded-full z-10"
+    >
+      ❯
+    </button>
+  </div>
+</carousel-component>
+
+<script>
+  class CarouselComponent extends HTMLElement {
+    private currentSlide: number;
+    private slides: Element[];
+    private container: HTMLElement;
+    private prevButton: HTMLButtonElement;
+    private nextButton: HTMLButtonElement;
+    private slidesToShow: number;
+
+    constructor() {
+      super();
+      this.currentSlide = 0;
+      this.container = this.querySelector(".carousel-container")!;
+      this.prevButton = this.querySelector(".carousel-prev")!;
+      this.nextButton = this.querySelector(".carousel-next")!;
+      this.slidesToShow = this.calculateSlidesToShow();
+      this.slides = Array.from(this.container.children);
+
+      this.initializeEventListeners();
+      this.setupResponsiveLayout();
+      this.isShowButtons();
+    }
+
+    private calculateSlidesToShow(): number {
+      return window.innerWidth >= 768 ? 3 : 1;
+    }
+
+    private setupResponsiveLayout(): void {
+      window.addEventListener("resize", () => {
+        this.slidesToShow = this.calculateSlidesToShow();
+        this.updateCarousel();
+      });
+    }
+
+    private initializeEventListeners(): void {
+      this.prevButton.addEventListener("click", () => this.changeSlide(-1));
+      this.nextButton.addEventListener("click", () => this.changeSlide(1));
+    }
+
+    private isShowButtons(): void {
+      if (this.slides.length <= this.slidesToShow) {
+        this.prevButton.style.display = "none";
+        this.nextButton.style.display = "none";
+      }
+    }
+
+    private updateCarousel(): void {
+      this.container.style.transform = `translateX(-${(this.currentSlide * 100) / this.slidesToShow}%)`;
+    }
+
+    private changeSlide(direction: number): void {
+      const totalSlides = this.slides.length - this.calculateSlidesToShow();
+      this.currentSlide += direction;
+
+      const maxSlide = totalSlides;
+
+      if (this.currentSlide > maxSlide) this.currentSlide = 0;
+      if (this.currentSlide < 0) this.currentSlide = maxSlide;
+
+      this.updateCarousel();
+    }
+  }
+
+  customElements.define("carousel-component", CarouselComponent);
+</script>

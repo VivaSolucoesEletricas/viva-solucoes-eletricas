@@ -14,9 +14,11 @@ import sectionContact from "../assets/section-contatos.webp";
 import instagramLogo from "../assets/instagram-logo.svg";
 import logoVivaEnergiaSolar from "../assets/logo-viva-energia-solar.svg";
 import { Image } from "astro:assets";
-import Projects from "../components/project.tsx";
-import QuemSomosSlider from "../components/quem-somos-slider.tsx";
+import ProjectsCarousel from "../components/projects/project.astro";
+import QuemSomosSlider from "../components/quem-somos-slider.astro";
 ---
+
+./components/quem-somos-slider.astro
 
 <Layout
   title="VIVA Soluções - Energia Solar Limpa e Renovável com Alta Qualidade e Segurança"
@@ -59,7 +61,7 @@ import QuemSomosSlider from "../components/quem-somos-slider.tsx";
         fornecedores.
       </p>
     </div>
-    <QuemSomosSlider client:load />
+    <QuemSomosSlider />
   </section>
   <section>
     <div class="container flex flex-col items-center p-6 m-auto">
@@ -226,7 +228,7 @@ import QuemSomosSlider from "../components/quem-somos-slider.tsx";
       <h3 class="text-5xl mb-6 text-center font-bold text-viva-orange">
         Conheça alguns projetos
       </h3>
-      <Projects client:load />
+      <ProjectsCarousel />
     </div>
   </section>
   <section class="relative">

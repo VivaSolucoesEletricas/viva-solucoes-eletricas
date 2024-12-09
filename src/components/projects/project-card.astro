@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+const { imageSrc, title, economy } = Astro.props;
+---
+
+<div class="flex-shrink-0 md:w-[calc(33.333%)] w-full overflow-hidden">
+  <div class="md:m-4 rounded-lg border border-zinc-200 shadow-md">
+    <div class="relative w-full h-48">
+      <Image
+        src={imageSrc}
+        alt="Imagem de energia"
+        class="absolute -z-10 inset-0 w-full h-full object-cover"
+      />
+    </div>
+    <div class="text-center p-4">
+      <span class="text-viva-blue font-bold">{title}</span>
+      <p class="text-sm">{economy}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+---
+import ProjectCard from "./project-card.astro";
+import Carousel from "../carousel.astro";
+
+import projeto1 from "../../assets/projeto1.jpeg";
+import projeto2 from "../../assets/projeto2.jpeg";
+import projeto3 from "../../assets/projeto3.jpeg";
+import projeto4 from "../../assets/projeto4.jpeg";
+import projeto5 from "../../assets/projeto5.jpeg";
+import projeto6 from "../../assets/projeto6.jpeg";
+import projeto7 from "../../assets/projeto7.jpeg";
+import projeto8 from "../../assets/projeto8.jpeg";
+import projeto9 from "../../assets/projeto9.jpeg";
+---
+
+<Carousel>
+  <ProjectCard
+    imageSrc={projeto1}
+    title="Comercial: Oficina Joab Car"
+    economy="Economia anual de R$ 130.500"
+  />
+  <ProjectCard
+    imageSrc={projeto2}
+    title="Residencial: Dona Iramaia"
+    economy="Economia anual de R$ 17.000"
+  />
+  <ProjectCard
+    imageSrc={projeto3}
+    title="Residencial: Felipe"
+    economy="Economia anual de R$ 130.000"
+  />
+  <ProjectCard
+    imageSrc={projeto4}
+    title="Residencial: Cristina"
+    economy="Economia anual de R$ 18.200"
+  />
+  <ProjectCard
+    imageSrc={projeto5}
+    title="Igreja São Gerardo"
+    economy="Economia anual de R$ 35.000"
+  />
+  <ProjectCard
+    imageSrc={projeto6}
+    title="Residencial: Ítalo"
+    economy="Economia anual de R$ 9.500"
+  />
+  <ProjectCard
+    imageSrc={projeto7}
+    title="Comercial: GM Móveis Pretos"
+    economy="Economia anual de R$ 36.000"
+  />
+  <ProjectCard
+    imageSrc={projeto8}
+    title="Comercial: Mercadinho VFL"
+    economy="Economia anual de R$ 40.300"
+  />
+  <ProjectCard
+    imageSrc={projeto9}
+    title="Residencial: Mário"
+    economy="Economia anual de R$ 35.700"
+  />
+</Carousel>

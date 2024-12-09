@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import Carousel from "./carousel.astro";
+
+import projeto1 from "../assets/quem-somos-1.jpeg";
+import projeto2 from "../assets/quem-somos-2.jpeg";
+import projeto3 from "../assets/quem-somos-3.jpeg";
+---
+
+<Carousel>
+  <Image
+    class="w-full md:w-[calc(33.333%)] flex-shrink-0"
+    src={projeto1}
+    alt="Imagem de energia"
+  />
+  <Image
+    class="w-full md:w-[calc(33.333%)] flex-shrink-0"
+    src={projeto2}
+    alt="Imagem de energia"
+  />
+  <Image
+    class="w-full md:w-[calc(33.333%)] flex-shrink-0"
+    src={projeto3}
+    alt="Imagem de energia"
+  />
+</Carousel>
